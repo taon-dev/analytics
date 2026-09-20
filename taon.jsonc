@@ -3,7 +3,7 @@
   "packageJsonOverride": {
     "author": "Dariusz Filipiak",
     "description": "Description for analytics. Hello world!",
-    "private": true,
+    "private": false,
     "scripts": {},
   },
   "overrideNpmName": "@taon-dev/analytics",
