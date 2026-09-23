@@ -6,6 +6,7 @@
     "private": false,
     "scripts": {},
   },
+  "isomorphicDependenciesForNpmLib": ["@taon-dev/session"],
   "overrideNpmName": "@taon-dev/analytics",
   "version": "v21",
   "shouldGenerateAutogenIndexFile": true,
