@@ -1,0 +1,1 @@
+export * from './taon-analytics-events-backoffice.component'; // @browser

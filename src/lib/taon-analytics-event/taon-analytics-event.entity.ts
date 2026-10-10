@@ -1,13 +1,9 @@
 //#region imports
 import {
-  CustomColumn, Column,
-  Taon,
+  Column,
   TaonBaseAbstractEntity,
   TaonEntity,
 } from 'taon/src';
-import { _ } from 'tnp-core/src';
-
-import { TaonAnalyticsEventDefaultsValues } from './taon-analytics-event.constants';
 //#endregion
 
 @TaonEntity({
@@ -16,11 +12,42 @@ import { TaonAnalyticsEventDefaultsValues } from './taon-analytics-event.constan
 })
 export class TaonAnalyticsEventEntity extends TaonBaseAbstractEntity<TaonAnalyticsEventEntity> {
   //#region @websql
-  @CustomColumn({
-    type: 'varchar',
-    length: 100,
-    default: TaonAnalyticsEventDefaultsValues.description,
-  })
+  @Column({ type: 'integer', nullable: true })
   //#endregion
-  description?: string;
+  sessionId: number | null = null;
+
+  //#region @websql
+  @Column({ type: 'varchar', nullable: true })
+  //#endregion
+  visitorId: string | null = null;
+
+  //#region @websql
+  @Column({ type: 'integer', nullable: true })
+  //#endregion
+  userId: number | null = null;
+
+  //#region @websql
+  @Column({ type: 'varchar' })
+  //#endregion
+  name: string;
+
+  //#region @websql
+  @Column({ type: 'varchar', nullable: true })
+  //#endregion
+  category: string | null = null;
+
+  //#region @websql
+  @Column({ type: 'varchar', nullable: true })
+  //#endregion
+  path: string | null = null;
+
+  //#region @websql
+  @Column({ type: 'simple-json', nullable: true })
+  //#endregion
+  data: Record<string, unknown> | null = null;
+
+  //#region @websql
+  @Column({ type: 'datetime' })
+  //#endregion
+  createdAt: Date;
 }

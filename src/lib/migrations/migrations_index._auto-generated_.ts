@@ -1,5 +1,7 @@
 // THIS FILE IS GENERATED - DO NOT MODIFY
-
+import { AnalyticsContext_1791132517216_initial } from './1791132517216_initial';
 // THIS FILE IS GENERATED - DO NOT MODIFY
-
+export const MIGRATIONS_CLASSES_FOR_AnalyticsContext = {
+  /* 04-10-2026 18:48:37 */ AnalyticsContext_1791132517216_initial,
+};
 // THIS FILE IS GENERATED - DO NOT MODIFY

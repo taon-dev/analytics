@@ -1,0 +1,1 @@
+export * from './taon-analytics-page-view-backoffice.component'; // @browser

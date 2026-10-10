@@ -1,5 +1,6 @@
 //#region imports
 import { createContext, TaonBaseContext } from 'taon/src';
+import { TaonAnalyticsMiddleware } from '../taon-analytics.middleware';
 
 import { TaonAnalyticsEventEntity } from './taon-analytics-event.entity';
 import { TaonAnalyticsEventController } from './taon-analytics-event.controller';
@@ -21,6 +22,6 @@ export const TaonAnalyticsEventAbstractContext = createContext(() => ({
     TaonAnalyticsEventRepository,
   },
   providers: { TaonAnalyticsEventProvider },
-  // middlewares: { TaonAnalyticsEventMiddleware },
+  middlewares: { TaonAnalyticsMiddleware },
   // subscribers: { TaonAnalyticsEventSubscriber },
 }));
