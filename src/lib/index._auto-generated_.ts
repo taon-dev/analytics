@@ -11,7 +11,6 @@ export * from './taon-analytics.abstract.context';
 export * from './taon-analytics.middleware'; 
 export * from './taon-analytics.models'; 
 export * from './taon-analytics.validation'; 
-export * from './i18n/lib.translation'; 
 export * from './taon-analytics-backoffice/taon-analytics-backoffice.component'; // @browser
 export * from './taon-analytics-backoffice/taon-analytics-backoffice.models'; 
 export * from './taon-analytics-backoffice/taon-analytics-backoffice.routes'; // @browser
@@ -75,16 +74,12 @@ export * from './taon-analytics-visitor/taon-analytics-visitor.repository';
 export * from './taon-analytics-visitor/taon-analytics-visitor.subscriber'; 
 export * from './taon-analytics-visitor/taon-analytics-visitor.utils'; 
 export * from './taon-analytics-visitor/taon-analytics-visitor.validators'; 
-export * from './taon-analytics-event/i18n/taon-analytics-event.translation'; 
 export * from './taon-analytics-event/taon-analytics-events-backoffice/taon-analytics-events-backoffice.component'; // @browser
 export * from './taon-analytics-event/taon-analytics-events-backoffice/taon-analytics-events-backoffice.models'; 
 export * from './taon-analytics-event/taon-analytics-events-backoffice/taon-analytics-events-backoffice.routes'; // @browser
-export * from './taon-analytics-page-view/i18n/taon-analytics-page-view.translation'; 
 export * from './taon-analytics-page-view/taon-analytics-page-view-backoffice/taon-analytics-page-view-backoffice.component'; // @browser
 export * from './taon-analytics-page-view/taon-analytics-page-view-backoffice/taon-analytics-page-view-backoffice.models'; 
 export * from './taon-analytics-page-view/taon-analytics-page-view-backoffice/taon-analytics-page-view-backoffice.routes'; // @browser
-export * from './taon-analytics-session/i18n/taon-analytics-session.translation'; 
-export * from './taon-analytics-visitor/i18n/taon-analytics-visitor.translation'; 
 export * from './taon-analytics-visitor/taon-analytics-visitor-backoffice/taon-analytics-visitor-backoffice.component'; // @browser
 export * from './taon-analytics-visitor/taon-analytics-visitor-backoffice/taon-analytics-visitor-backoffice.models'; 
 export * from './taon-analytics-visitor/taon-analytics-visitor-backoffice/taon-analytics-visitor-backoffice.routes'; // @browser
