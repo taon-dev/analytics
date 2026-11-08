@@ -9,6 +9,7 @@ import { TaonAnalyticsVisitorController } from './taon-analytics-visitor/taon-an
 import { TaonAnalyticsEventController } from './taon-analytics-event/taon-analytics-event.controller';
 import type { TaonAnalyticsEventInput } from './taon-analytics.models';
 import { isAnalyticsVisitorId } from './taon-analytics.validation';
+import { TaonSessionUserUtils } from '@taon-dev/session/src';
 
 @Injectable()
 export class TaonAnalyticsTrackingService extends TaonBaseAngularService {
@@ -35,7 +36,7 @@ export class TaonAnalyticsTrackingService extends TaonBaseAngularService {
       if (storedVisitor && !isAnalyticsVisitorId(storedVisitor)) {
         console.warn('[analytics] Discarding invalid stored visitor ID.');
       }
-      this.visitorId = isAnalyticsVisitorId(storedVisitor) ? storedVisitor : browser.crypto.randomUUID();
+      this.visitorId = isAnalyticsVisitorId(storedVisitor) ? storedVisitor :  TaonSessionUserUtils.randomUUID();
       browser.localStorage.setItem('taon.analytics.visitorId', this.visitorId);
       const storedSession = browser.sessionStorage.getItem('taon.analytics.sessionId');
       this.sessionId = storedSession ? Number(storedSession) : null;
