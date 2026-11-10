@@ -1,4 +1,9 @@
 //#region imports
+import { TaonAuthContextRepository } from '@taon-dev/e-commerce/src';
+import {
+  TaonSessionCoreGroups,
+  TaonSessionRepository,
+} from '@taon-dev/session/src';
 import {
   Taon,
   ClassHelpers,
@@ -8,6 +13,9 @@ import {
   GET,
   POST,
   Body,
+  Models,
+  getStatusCode,
+  HttpStatusEnum,
 } from 'taon/src';
 import { _ } from 'tnp-core/src';
 
@@ -30,6 +38,38 @@ export class TaonAnalyticsEventController extends TaonBaseCrudController<TaonAna
   taonAnalyticsEventRepository = this.injectCustomRepo(
     TaonAnalyticsEventRepository,
   );
+
+  taonSessionRepository = this.injectCustomRepo(TaonSessionRepository);
+
+  taonAuthContextRepository = this.injectCustomRepo(TaonAuthContextRepository);
+
+  protected async beforeEachRequest({
+    req,
+    res,
+    methodConfig,
+    t,
+  }: Models.TaonCtrlBeforeEachRequestParams<TaonAnalyticsEventController>): Promise<void> {
+    //#region @websqlFunc
+    if (methodConfig.methodName === 'record') {
+      return;
+    }
+    await this.taonSessionRepository.throwIfNotAuthenticated({ req, res });
+    const context = await this.taonAuthContextRepository.getContext(
+      req.userId,
+      req.sessionId,
+    );
+    if (context?.hasAccess?.toManageAnalytics) {
+      // ok
+    } else {
+      Taon.error({
+        message: t.gettext(
+          'Administrator access is required for analytics management.',
+        ),
+        status: getStatusCode(HttpStatusEnum.FORBIDDEN),
+      });
+    }
+    //#endregion
+  }
 
   @POST()
   record(

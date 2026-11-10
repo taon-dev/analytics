@@ -2,28 +2,39 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { DestroyRef, Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router } from '@angular/router';
+import { TaonSessionUserUtils } from '@taon-dev/session/src';
 import { firstValueFrom, filter } from 'rxjs';
 import { TaonBaseAngularService } from 'taon/src';
 
-import { TaonAnalyticsVisitorController } from './taon-analytics-visitor/taon-analytics-visitor.controller';
 import { TaonAnalyticsEventController } from './taon-analytics-event/taon-analytics-event.controller';
+import { TaonAnalyticsVisitorController } from './taon-analytics-visitor/taon-analytics-visitor.controller';
 import type { TaonAnalyticsEventInput } from './taon-analytics.models';
 import { isAnalyticsVisitorId } from './taon-analytics.validation';
-import { TaonSessionUserUtils } from '@taon-dev/session/src';
 
 @Injectable()
 export class TaonAnalyticsTrackingService extends TaonBaseAngularService {
   private readonly visitors = this.injectController(TaonAnalyticsVisitorController);
+
   private readonly events = this.injectController(TaonAnalyticsEventController);
+
   private readonly router = inject(Router);
+
   private readonly document = inject(DOCUMENT);
+
   private readonly browserPlatformId = inject(PLATFORM_ID);
+
   private readonly destroyRef = inject(DestroyRef);
+
   private visitorId!: string;
+
   private sessionId: number | null = null;
+
   private pageViewId: number | null = null;
+
   private started = false;
+
   private pending: Promise<void> = Promise.resolve();
+
   private lastActivitySentAt = 0;
 
   start(): void {
