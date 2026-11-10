@@ -1,0 +1,9 @@
+msgid ""
+msgstr ""
+"Language: pl-PL\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/lib/taon-analytics-visitor/taon-analytics-visitor.controller.ts:76
+msgid "Administrator access is required for analytics management."
+msgstr ""
