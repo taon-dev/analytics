@@ -25,9 +25,5 @@ export class TaonAnalyticsVisitorApiService extends TaonBaseAngularService {
     );
   }
 
-  public helloWorld(user: string): Observable<string> {
-    return this.taonAnalyticsVisitorController.helloWord(user).request!().observable.pipe(
-      map(res => res.responseText as string),
-    );
-  }
+
 }

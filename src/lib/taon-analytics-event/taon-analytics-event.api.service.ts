@@ -10,17 +10,12 @@ import { TaonAnalyticsEventController } from './taon-analytics-event.controller'
 
 @Injectable()
 export class TaonAnalyticsEventApiService extends TaonBaseAngularService {
-  private taonAnalyticsEventController = this.injectController(TaonAnalyticsEventController);
+  private taonAnalyticsEventController = this.injectController(
+    TaonAnalyticsEventController,
+  );
 
   public get allMyEntities$(): Observable<TaonAnalyticsEventEntity[]> {
-    return this.taonAnalyticsEventController.getAll().request!().observable.pipe(
-      map(res => res.body?.json),
-    );
-  }
-
-  public helloWorld(user: string): Observable<string> {
-    return this.taonAnalyticsEventController.helloWord(user).request!().observable.pipe(
-      map(res => res.responseText as string),
-    );
+    return this.taonAnalyticsEventController.getAll()
+      .request!().observable.pipe(map(res => res.body?.json));
   }
 }
