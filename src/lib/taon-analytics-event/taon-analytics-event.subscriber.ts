@@ -9,7 +9,7 @@ import { TaonAnalyticsEventProvider } from './taon-analytics-event.provider';
   // allowedEvents: ['afterUpdate'],
 })
 export class TaonAnalyticsEventSubscriber extends TaonBaseSubscriberForEntity {
-  taonAnalyticsEventProvider = this.injectProvider(TaonAnalyticsEventProvider);
+  taonAnalyticsEventProvider = this.inject(TaonAnalyticsEventProvider);
   listenTo(): typeof TaonAnalyticsEventEntity {
     return TaonAnalyticsEventEntity;
   }

@@ -26,7 +26,7 @@ export class TaonAnalyticsSessionController extends TaonBaseCrudController<
 > {
   entityClassResolveFn: () => typeof TaonAnalyticsSessionEntity = () => TaonAnalyticsSessionEntity;
 
-  private readonly taonAnalyticsSessionRepository = this.injectCustomRepo(TaonAnalyticsSessionRepository);
+  private readonly taonAnalyticsSessionRepository = this.inject(TaonAnalyticsSessionRepository);
 
   //#region methods & getters / hello world
   /**

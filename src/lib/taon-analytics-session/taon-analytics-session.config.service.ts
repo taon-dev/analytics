@@ -9,7 +9,7 @@ import { TaonAnalyticsSessionProvider } from './taon-analytics-session.provider'
 
 @Injectable()
 export class TaonAnalyticsSessionConfigService extends TaonBaseAngularService {
-  private taonAnalyticsSessionProvider = this.injectProvider(TaonAnalyticsSessionProvider);
+  private taonAnalyticsSessionProvider = this.inject(TaonAnalyticsSessionProvider);
 
   get isEnableOption() {
     return this.taonAnalyticsSessionProvider.enabledTaonAnalyticsSessionOption;

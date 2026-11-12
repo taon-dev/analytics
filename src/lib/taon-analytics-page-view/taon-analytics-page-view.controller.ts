@@ -27,7 +27,7 @@ export class TaonAnalyticsPageViewController extends TaonBaseCrudController<
   entityClassResolveFn: () => typeof TaonAnalyticsPageViewEntity = () =>
     TaonAnalyticsPageViewEntity;
 
-  private readonly taonAnalyticsPageViewRepository = this.injectCustomRepo(
+  private readonly taonAnalyticsPageViewRepository = this.inject(
     TaonAnalyticsPageViewRepository,
   );
 }

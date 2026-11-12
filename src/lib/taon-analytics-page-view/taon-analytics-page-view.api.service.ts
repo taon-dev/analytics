@@ -10,7 +10,7 @@ import { TaonAnalyticsPageViewController } from './taon-analytics-page-view.cont
 
 @Injectable()
 export class TaonAnalyticsPageViewApiService extends TaonBaseAngularService {
-  protected readonly taonAnalyticsPageViewController = this.injectController(TaonAnalyticsPageViewController);
+  protected readonly taonAnalyticsPageViewController = this.inject(TaonAnalyticsPageViewController);
 
 
 }

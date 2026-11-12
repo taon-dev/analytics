@@ -35,13 +35,13 @@ export class TaonAnalyticsEventController extends TaonBaseCrudController<TaonAna
   entityClassResolveFn: () => typeof TaonAnalyticsEventEntity = () =>
     TaonAnalyticsEventEntity;
 
-  taonAnalyticsEventRepository = this.injectCustomRepo(
+  taonAnalyticsEventRepository = this.inject(
     TaonAnalyticsEventRepository,
   );
 
-  taonSessionRepository = this.injectCustomRepo(TaonSessionRepository);
+  taonSessionRepository = this.inject(TaonSessionRepository);
 
-  taonAuthContextRepository = this.injectCustomRepo(TaonAuthContextRepository);
+  taonAuthContextRepository = this.inject(TaonAuthContextRepository);
 
   protected async beforeEachRequest({
     req,

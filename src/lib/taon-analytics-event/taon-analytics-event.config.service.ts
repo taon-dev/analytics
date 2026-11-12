@@ -9,7 +9,7 @@ import { TaonAnalyticsEventProvider } from './taon-analytics-event.provider';
 
 @Injectable()
 export class TaonAnalyticsEventConfigService extends TaonBaseAngularService {
-  private taonAnalyticsEventProvider = this.injectProvider(TaonAnalyticsEventProvider);
+  private taonAnalyticsEventProvider = this.inject(TaonAnalyticsEventProvider);
 
   get isEnableOption() {
     return this.taonAnalyticsEventProvider.enabledTaonAnalyticsEventOption;

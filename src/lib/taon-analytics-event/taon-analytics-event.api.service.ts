@@ -10,7 +10,7 @@ import { TaonAnalyticsEventController } from './taon-analytics-event.controller'
 
 @Injectable()
 export class TaonAnalyticsEventApiService extends TaonBaseAngularService {
-  private taonAnalyticsEventController = this.injectController(
+  private taonAnalyticsEventController = this.inject(
     TaonAnalyticsEventController,
   );
 

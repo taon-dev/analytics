@@ -11,7 +11,7 @@ import { TaonAnalyticsOverview } from '../taon-analytics.models';
 
 @Injectable()
 export class TaonAnalyticsVisitorApiService extends TaonBaseAngularService {
-  public readonly taonAnalyticsVisitorController = this.injectController(TaonAnalyticsVisitorController);
+  public readonly taonAnalyticsVisitorController = this.inject(TaonAnalyticsVisitorController);
 
   public overview(): Observable<TaonAnalyticsOverview> {
     return this.taonAnalyticsVisitorController.overview().request!().observable.pipe(

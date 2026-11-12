@@ -10,7 +10,7 @@ import { TaonAnalyticsSessionController } from './taon-analytics-session.control
 
 @Injectable()
 export class TaonAnalyticsSessionApiService extends TaonBaseAngularService {
-  public readonly taonAnalyticsSessionController = this.injectController(TaonAnalyticsSessionController);
+  public readonly taonAnalyticsSessionController = this.inject(TaonAnalyticsSessionController);
 
   public get allMyEntities$(): Observable<TaonAnalyticsSessionEntity[]> {
     return this.taonAnalyticsSessionController.getAll().request!().observable.pipe(

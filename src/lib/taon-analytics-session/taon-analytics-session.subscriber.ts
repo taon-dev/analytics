@@ -9,7 +9,7 @@ import { TaonAnalyticsSessionProvider } from './taon-analytics-session.provider'
   // allowedEvents: ['afterUpdate'],
 })
 export class TaonAnalyticsSessionSubscriber extends TaonBaseSubscriberForEntity {
-  private readonly taonAnalyticsSessionProvider = this.injectProvider(TaonAnalyticsSessionProvider);
+  private readonly taonAnalyticsSessionProvider = this.inject(TaonAnalyticsSessionProvider);
   listenTo(): typeof TaonAnalyticsSessionEntity {
     return TaonAnalyticsSessionEntity;
   }

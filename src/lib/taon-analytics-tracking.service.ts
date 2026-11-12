@@ -13,9 +13,9 @@ import { isAnalyticsVisitorId } from './taon-analytics.validation';
 
 @Injectable()
 export class TaonAnalyticsTrackingService extends TaonBaseAngularService {
-  private readonly visitors = this.injectController(TaonAnalyticsVisitorController);
+  private readonly visitors = this.inject(TaonAnalyticsVisitorController);
 
-  private readonly events = this.injectController(TaonAnalyticsEventController);
+  private readonly events = this.inject(TaonAnalyticsEventController);
 
   private readonly router = inject(Router);
 

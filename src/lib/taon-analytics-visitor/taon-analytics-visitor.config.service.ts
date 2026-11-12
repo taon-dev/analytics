@@ -9,7 +9,7 @@ import { TaonAnalyticsVisitorProvider } from './taon-analytics-visitor.provider'
 
 @Injectable()
 export class TaonAnalyticsVisitorConfigService extends TaonBaseAngularService {
-  private taonAnalyticsVisitorProvider = this.injectProvider(TaonAnalyticsVisitorProvider);
+  private taonAnalyticsVisitorProvider = this.inject(TaonAnalyticsVisitorProvider);
 
   get isEnableOption() {
     return this.taonAnalyticsVisitorProvider.enabledTaonAnalyticsVisitorOption;

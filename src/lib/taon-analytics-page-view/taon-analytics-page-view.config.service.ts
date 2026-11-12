@@ -9,7 +9,7 @@ import { TaonAnalyticsPageViewProvider } from './taon-analytics-page-view.provid
 
 @Injectable()
 export class TaonAnalyticsPageViewConfigService extends TaonBaseAngularService {
-  private taonAnalyticsPageViewProvider = this.injectProvider(TaonAnalyticsPageViewProvider);
+  private taonAnalyticsPageViewProvider = this.inject(TaonAnalyticsPageViewProvider);
 
   get isEnableOption() {
     return this.taonAnalyticsPageViewProvider.enabledTaonAnalyticsPageViewOption;

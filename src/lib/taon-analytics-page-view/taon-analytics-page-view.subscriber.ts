@@ -9,7 +9,7 @@ import { TaonAnalyticsPageViewProvider } from './taon-analytics-page-view.provid
   // allowedEvents: ['afterUpdate'],
 })
 export class TaonAnalyticsPageViewSubscriber extends TaonBaseSubscriberForEntity {
-  private readonly taonAnalyticsPageViewProvider = this.injectProvider(TaonAnalyticsPageViewProvider);
+  private readonly taonAnalyticsPageViewProvider = this.inject(TaonAnalyticsPageViewProvider);
   listenTo(): typeof TaonAnalyticsPageViewEntity {
     return TaonAnalyticsPageViewEntity;
   }
